@@ -1,0 +1,24 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.ebookfrenzy.weatherapp.MainActivity">
+
+    <group android:id="@+id/main_menu_group">
+        <item
+            android:id="@+id/menu_select_city"
+            android:orderInCategory="1"
+            android:title="@string/select_city"
+            app:showAsAction="ifRoom" />
+        <item
+            android:id="@+id/menu_add_city"
+            android:orderInCategory="2"
+            android:title="@string/add_city"
+            app:showAsAction="ifRoom" />
+        <item
+            android:id="@+id/menu_remove_city"
+            android:orderInCategory="3"
+            android:title="@string/remove_city"
+            app:showAsAction="never" />
+    </group>
+
+</menu>
