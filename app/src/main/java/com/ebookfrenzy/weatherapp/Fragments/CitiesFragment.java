@@ -102,6 +102,10 @@ public class CitiesFragment extends Fragment implements CallbackInterface {
     }
 
     public void addCityToList(String city) {
+
+        if (cityArrayList.size() == 0) {
+            cityArrayList.add(0, DEFAULT_CITY);
+        }
         cityArrayList.add(0, city);
 
         assert getArguments() != null;

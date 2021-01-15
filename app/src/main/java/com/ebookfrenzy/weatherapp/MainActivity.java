@@ -182,6 +182,10 @@ public class MainActivity extends AppCompatActivity implements CitiesFragment.On
     @Override
     public void onAddCityButtonClicked(String addedCity) {
 
+        if (savedArgs != null){
+            citiesFragment.setArguments(savedArgs);
+        }
+
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.frameLayout, citiesFragment).addToBackStack(null);
         transaction.commit();
