@@ -13,7 +13,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.ebookfrenzy.weatherapp.Interfaces.CallbackInterface;
 import com.ebookfrenzy.weatherapp.R;
 import com.survivingwithandroid.weather.lib.exception.WeatherProviderInstantiationException;
-import com.survivingwithandroid.weather.lib.model.City;
 
 import java.util.List;
 

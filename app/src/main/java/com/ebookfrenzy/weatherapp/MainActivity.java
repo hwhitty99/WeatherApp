@@ -2,18 +2,15 @@ package com.ebookfrenzy.weatherapp;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.recyclerview.widget.RecyclerView;
-
-import android.view.View;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.ebookfrenzy.weatherapp.Adapters.CitiesRecyclerViewAdapter;
 import com.ebookfrenzy.weatherapp.Fragments.AddCityFragment;
@@ -22,13 +19,10 @@ import com.ebookfrenzy.weatherapp.Fragments.CurrentFragment;
 import com.ebookfrenzy.weatherapp.Fragments.ForecastFragment;
 import com.survivingwithandroid.weather.lib.WeatherClient;
 import com.survivingwithandroid.weather.lib.WeatherConfig;
-import com.survivingwithandroid.weather.lib.exception.WeatherLibException;
 import com.survivingwithandroid.weather.lib.exception.WeatherProviderInstantiationException;
-import com.survivingwithandroid.weather.lib.model.City;
 import com.survivingwithandroid.weather.lib.provider.openweathermap.OpenweathermapProviderType;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements CitiesFragment.OnSelectCityListener, CurrentFragment.CurrentFragmentListener, AddCityFragment.onAddCityListener {
 
@@ -162,9 +156,9 @@ public class MainActivity extends AppCompatActivity implements CitiesFragment.On
     }
 
     @Override
-    public void onForecastClick(View view) {
+    public void onForecastClick(View view, String city) {
 
-        forecastFragment = ForecastFragment.newInstance(cityToDisplayString);
+        forecastFragment = ForecastFragment.newInstance(city);
         getSupportFragmentManager()
                 .beginTransaction()
                 .replace(R.id.frameLayout, forecastFragment)
@@ -173,7 +167,7 @@ public class MainActivity extends AppCompatActivity implements CitiesFragment.On
 
         showOverflowMenu(false);
 
-        Toast.makeText(view.getContext(), "Nice", Toast.LENGTH_SHORT).show();
+        Toast.makeText(view.getContext(), "5 Day Forecast", Toast.LENGTH_SHORT).show();
     }
 
     @Override

@@ -32,7 +32,7 @@ import static androidx.constraintlayout.motion.widget.MotionScene.TAG;
  */
 public class CitiesFragment extends Fragment implements CallbackInterface {
 
-    private static final String DEFAULT_CITY = "Bourbonnais,United States";
+    private static final String DEFAULT_CITY = "Bourbonnais, United States";
     public static final String ARGS_CITY_LIST = "cityList";
 
     private List<String> cityArrayList = new ArrayList<>();
@@ -53,7 +53,7 @@ public class CitiesFragment extends Fragment implements CallbackInterface {
     @Override
     public void onItemLongClick(int position) {
         if (position == 0) {
-            Toast.makeText(getActivity(), "You gotta keep at least 1 right?", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity(), "Trust me you don't want to delete that...", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -103,6 +103,7 @@ public class CitiesFragment extends Fragment implements CallbackInterface {
 
     public void addCityToList(String city) {
         cityArrayList.add(0, city);
+
         assert getArguments() != null;
         getArguments().putStringArrayList(ARGS_CITY_LIST, (ArrayList<String>) cityArrayList);
     }
